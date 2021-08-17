@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 public class QuizController {
+	private final String prefix = "/api";
 
-	@GetMapping("/api/hello-world")
+	@GetMapping(prefix + "/hello-world")
 	public String helloWorld(@RequestParam(value = "name", defaultValue = "World") String name) {
 		log.info("/hello-world hit");
 		return String.format("Hello, %s!", name);
